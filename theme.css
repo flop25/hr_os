@@ -1,0 +1,479 @@
+/* ---------------------------------------------------------------------------
+Thème hr_os de flop25(.free.fr)
+
+Basé sur le Thème MontBlanc de saimon.org
+------------------------------------------------------------------------------ */
+
+@import url(menu.css);
+
+* { margin: 0; padding: 0; border: 0; }
+
+body {
+	background-image: url(img/background.bg3.1.jpg);
+	background-repeat: repeat-y;
+	background-position: center center;
+	background-color:#7f7f7f;
+	font-size:0.7em;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+/*body {
+	background-image: url(img/background.bg3.jpg);
+	background-repeat: repeat-y;
+	background-position: center center;
+	background-color:#a19fa0;
+	font-size:0.7em;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+*/
+#comments H2, .titrePage h2 {
+background-image: url(img/fondMenu2_2.jpg);
+background-repeat:repeat-x;
+background-color:#000000;
+	color: #FFF;
+	border: 0;
+}
+.titrePage a, .categoryActions, .calendarViews {
+	color: #FFF;
+}
+
+/* Common styles
+-------------------------------------------------------- */
+h2, h3 { color:#696969; }
+ul { list-style: none; }
+ul li { list-style: none; }
+
+a, a:link { color:#0066CC; text-decoration: none; border:0; }
+a:hover { text-decoration: none; border-bottom:1px solid #0066CC;}
+/*a:visited { color:#333333;}*/
+
+pre { overflow: auto; width: 100%; height: auto; }
+.left { float: left; }
+.right { float: right; }
+
+img{ border: 0; }
+
+/* Page
+-------------------------------------------------------- */
+BODY#thePicturePage,BODY#theCategoryPage, BODY#theTagsPage {}
+
+#the_page {
+	width: 800px;
+	margin: 0 auto;
+	position: relative;
+	background: transparent url(img/back.jpg) repeat-y top center;
+}
+
+#content div.titrePage { padding: 10px 3px; }
+
+/* Header
+-------------------------------------------------------- */
+#theHeader {
+	background: transparent url(img/header.jpg) no-repeat center bottom;
+	height: 180px;
+	margin: 0 auto;
+}
+	#theHeader h1 {
+	font-size: 2em;
+	margin: 0;
+	/*	padding: 170px 34px 0 34px; */
+		color: #FFFFFF;
+	text-align: left;
+	position: absolute;
+	left: 30px;
+	top: 150px;
+	}
+	#theHeader p {display:none;}
+/*	#theHeader a:link, #theHeader a:visited, #theHeader a:hover { color: #FFF; text-decoration: none; }*/
+
+body#theCommentsPage .content, body#theUploadPage .content, body#theRegisterPage .content, body#theIdentificationPage .content, body#theProfilePage .content, body#theSearchPage .content, body#theAboutPage .content, body#thePopuphelpPage .content, body#thePasswordPage .content, body#theNotificationPage .content, body#theTagsPage .content, body#theNBMPage .content, #content, BODY#theAdminPage #content, BODY#theTagsPage #content {
+	width: 760px;
+	margin: 0 auto;
+}
+
+/*=========================================================================================*/
+
+.row1 { background-color: #999;}
+.throw { background-color: #999;}
+
+/*	Page Catégories
+-----------------------------------------------------------------------------------------------*/
+#content div.thumbnailCategory { 
+	padding: 2px; 
+	text-align: center;
+}
+#content div.thumbnailCategory:hover {
+	border:1px solid #0066cc;
+	background-color: #eee;
+}
+#content ul.thumbnailCategories li { width:49.9%; }
+
+/*	Page Image
+-----------------------------------------------------------------------------------------------*/
+#linkNext {
+    float: right;
+    margin-left: 10px;
+    margin-right: 15px;
+}
+#linkPrev {
+    float: left;
+    margin-left: 15px;
+    margin-right: 10px;
+}
+#imageToolBar, #imageHeaderBar {
+	width: 740px;
+	margin: 10px auto;
+}
+#imageHeaderBar{
+	background: #F5F5F5;
+	border: 1px solid #CDCDCD;
+	border-width: 1px 0;
+	padding: 5px 8px;
+}
+
+#theImage IMG {
+  padding: 5px;
+  border: 1px solid #aaa;
+}
+
+#imageHeaderBar H2 { 
+	border: none;
+	clear: both;
+	padding: 0;
+	text-align: center;
+	padding: 0.5em 0 0 0;
+}
+#imageHeaderBar .browsePath a { color:#0066CC; text-decoration: none; }
+#imageHeaderBar .browsePath a:hover { color:#333333; }
+
+/*#imageToolBar A:hover { background-color: #a0a0a0; }*/
+
+.infoTable{ margin: 20px auto; }
+#thumbPrev{ margin: 20px 0 0 20px; }
+#thumbNext{ margin: 20px 20px 0 0;}
+a#thumbPrev, a#thumbNext { text-decoration: none; border:0; }
+
+/*	commentaires
+-----------------------------------------------------------------------------------------------*/
+
+#comments{ width: 760px; margin: 20px auto; }
+#comments DIV.comment BLOCKQUOTE { border: 1px solid #5f5f5f; border-left: 2px solid #696969; }
+
+FIELDSET, INPUT, SELECT, TEXTAREA, TABLE.table2, #infos,
+#content DIV.comment  A.illustration IMG, #content DIV.thumbnailCategory { border: 1px solid gray; }
+
+textarea { width:80%; }
+
+/*	miniatures
+-----------------------------------------------------------------------------------------------*/
+#content DIV.thumbnailCategory DIV.description  p { text-align: left; }
+
+/*#content ul.thumbnails span.wrap1 { margin: 0 10px; }*/
+#content UL.thumbnails SPAN.wrap2 img { padding: 5px; border: 1px solid #ccc; }
+#content UL.thumbnails SPAN.wrap2 img:hover { border-color: #06c; }
+
+#content UL.thumbnails LI.thumbCat SPAN.wrap2 { border-style: hidden; background-color: #ccccaa; }
+#content UL.thumbnails LI.thumbCat SPAN.wrap2:hover { border-style: solid; }
+
+#content ul.thumbnails span.thumbLegend {
+/*    height: auto;*/
+    padding: 0.5em 0;
+}
+.zero { display: none }
+.nb-hits { color: #69c; }
+.nb-comments { color: #f92; }
+
+
+/* links */
+/*.rateButton, A { color: #FFFFFF; }
+.rateButton:hover, A:hover { color: #FFF48E; }*/
+
+/*	Menu
+-----------------------------------------------------------------------------------------------*/
+
+#menubar .button {
+left:95%;
+position:absolute;
+}
+
+#menubar { position: relative; z-index: 2; }
+#content { position: relative; z-index: 1; }
+
+#content div.thumbnailCategory div.description {
+	overflow: hidden; /* bug in FF 1.0 (not 1.5) */
+}
+/*#content div.thumbnailCategory>div.description:hover {
+  overflow: visible;
+}*/
+
+/* horizontal menubar */
+#menubar, BODY#theAdminPage #menubar {
+	float: none;
+	width: 750px;
+	margin: 5px auto;
+	border: none;
+	/*overflow: hidden;*/	/* bothers FF so we rather set height below */
+	display: block;
+}
+
+/* set menubar height (not for IE) */
+#the_page > #menubar, BODY#theAdminPage #the_page > #menubar {
+  height: 2.1em;
+  padding: 0;
+}
+#menubar DL>DT {
+  padding: 0.2em 0.4em;
+}
+
+/* general UL formating */
+#menubar UL, #menubar DL, #menubar UL#menuTagCloud {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+#menubar DL { display: inline; padding: 0 2.1em; }
+BODY#theAdminPage #the_page > #menubar DL { padding: 0 0.5em;}
+
+#menubar UL {  width: 20em; }
+#menubar ul li a {  padding-right: 3em; }
+
+#menubar P, #menubar P.totalImages, FORM#quickconnect {
+  clear: both;
+  margin: 0;
+  text-align: center;
+  padding: 0.2em;
+}
+
+/* titles and links */
+#menubar A, #menubar DT { display: block; }
+
+/* positioning */
+#menubar LI { position: relative;}
+#menubar DD { position: absolute; z-index: 500;}
+#menubar DD UL UL {
+  position: absolute;
+  top: 0px;
+  left: 100%;
+  z-index: 500;
+}
+#menubar LI SPAN,#menubar LI IMG { position: absolute; top: 0;}
+#menubar LI SPAN { right: 7px;}
+#menubar LI IMG { right: 3em;}
+
+/* hiding and revealing up to 6 menu levels */
+DIV#menubar DD,
+DIV#menubar UL UL,
+DIV#menubar UL LI:hover UL UL,
+DIV#menubar UL UL LI:hover UL UL,
+DIV#menubar UL UL UL LI:hover UL UL,
+DIV#menubar UL UL UL UL LI:hover UL UL { display: none; }
+
+DIV#menubar DL:hover DD,
+DIV#menubar UL LI:hover UL,
+DIV#menubar UL UL LI:hover UL,
+DIV#menubar UL UL UL LI:hover UL,
+DIV#menubar UL UL UL UL LI:hover UL,
+DIV#menubar UL UL UL UL UL LI:hover UL { display: block; }
+
+/* styles */
+#menubar, #menubar DT {
+background-image: url(img/fondMenu2.gif);
+background-repeat:repeat-x;
+background-color:#000000;
+	color: #FFF;
+	border: 0;
+}
+#menubar a, #menubar DT a { 
+	color: #fff; 
+	display: block; 
+	text-decoration: none; 
+	border: 0;
+
+}
+#menubar DD, #menubar UL {
+	color: #000000;
+	border: 0;
+	background-image: url(img/back_menu.png);
+}
+#menubar DD {
+    border-right: 2px solid #777;
+    border-bottom: 2px solid #777;
+   -moz-border-radius: 4px;   
+    border-radius: 4px 4px;   
+    }
+#menubar DD A { padding: 0.5em; }
+#menubar DD a {
+	color: #000000;
+	display: block;
+	text-decoration: none;
+	border: 0;
+}
+
+
+/********************/
+#menubar A:hover, #menubar dt:hover {
+color: #fff; 
+background-image: url(img/fondMenuSurvol.gif);
+background-repeat:repeat-x;
+background-position:center;
+background-color:#CCCCCC,
+}
+/********************/
+#menubar A:hover { color: #fff; }
+#menubar DD A { padding: 0.5em; }
+#menubar DD A:hover { background-color: #999; }
+
+/*	quickconnect (still to be fixed for IE) 
+-----------------------------------------------------------------------------------------------*/
+FORM#quickconnect FIELDSET { width: 220px; }
+FORM#quickconnect LABEL { clear: left; /*margin: 0;*/ text-align: left; }
+FORM#quickconnect LABEL INPUT { font-size: 1em; /*width: 15em;*/ }
+FORM#quickconnect P, FORM#quickconnect A { border: none; padding: 0; }
+/*FORM#quickconnect A { display: inline; }*/
+FORM#quickconnect ul.actions { width: auto; }
+/*FORM#quickconnect ul.actions img { position: static; }*/
+FORM#quickconnect ul.actions li { display: inline; float: right; }
+
+
+
+/*	menuTagCloud
+-----------------------------------------------------------------------------------------------*/
+
+#menubar UL#menuTagCloud A { padding-left: 2px; }
+#menubar UL#menuTagCloud LI { display: block; }
+
+UL#menuTagCloud A IMG { position: static; }
+UL#menuTagCloud A {
+  position: absolute;
+  left: 7px;
+  top: 0.2em;
+  padding-right: 0;
+  display: inline;
+  border-width: 0;
+}
+
+#menubar UL#menuTagCloud A.tagLevel1,
+#menubar UL#menuTagCloud A.tagLevel2,
+#menubar UL#menuTagCloud A.tagLevel3,
+#menubar UL#menuTagCloud A.tagLevel4,
+#menubar UL#menuTagCloud A.tagLevel5,
+#menubar UL#menuTagCloud A.tagLevel6,
+#menubar UL#menuTagCloud A.tagLevel7,
+#menubar UL#menuTagCloud A.tagLevel8,
+#menubar UL#menuTagCloud A.tagLevel9,
+#menubar UL#menuTagCloud A.tagLevel10 {
+  /*font-size: 100%;*/
+  /*padding-left: 1.5em;*/
+  padding-left: 18px;
+  position: static;
+  display: block;
+}
+
+/* Tags - Page des tags
+-------------------------------------------------------- */
+
+ul#fullTagCloud {
+	position: relative;
+	border: 1px solid #E8E8E8;
+	border-width: 1px 0;
+	background: #FBFBFB;
+	padding: 5px;
+	margin: 8px 0 20px 0;
+	overflow: hidden;
+	height: 100%;
+	font-size: 120%;
+}
+	ul#fullTagCloud li {
+		/* display: inline; */
+		display: block;
+		float: left;
+		margin: 4px;
+		padding: 1px 5px;
+		height: 18px;
+		line-height: 18px;
+		background: none;
+	}
+	ul#fullTagCloud li a:link, ul#fullTagCloud li a:visited {
+		color: #005D99;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+	ul#fullTagCloud li a:hover { text-decoration: underline; border: 0; }
+	ul#fullTagCloud li a:focus, ul#fullTagCloud li a:active { background: #005D99; color: #FFF; }
+
+.tagLevel5 { font-size:160%; }
+.tagLevel4 { font-size:140%; }
+.tagLevel3 { font-size:120%; }
+.tagLevel2 { font-size:100%; }
+.tagLevel1 { font-size:80%; }
+
+/*.tagLevel1 { font-size: 80%; }
+.tagLevel2 { font-size: 90%; }
+.tagLevel3 { font-size: 100%; }
+.tagLevel4 { font-size: 110%; }
+.tagLevel5 { font-size: 120%; }
+.tagLevel6 { font-size: 130%; }
+.tagLevel7 { font-size: 140%; }
+.tagLevel8 { font-size: 150%; }
+.tagLevel9 { font-size: 160%; }
+.tagLevel10 { font-size: 170%; }*/
+
+/*====== */
+
+/* others */
+.pleaseNote {
+	margin: 20px auto;
+	width: 700px;
+    background: #eee;
+    color: #ff9b00;
+	border: 1px solid #ff9b00;
+    padding: 1ex;
+    font-weight: bold;
+}
+
+.header_notes { background-position:left center; padding: 5px 0px; }
+
+li.categoryLi {
+	float:left;
+	margin:2px;
+	width:46%;
+}
+
+input.rateButton { color: #369; }
+input.rateButtonSelected { color:#696969; }
+INPUT.rateButton:hover { color: #858460;}
+
+/*	calendar
+-----------------------------------------------------------------------------------------------*/
+
+DIV.calendarViews {
+  padding-top: 5px;
+  padding-right: 6px;
+}
+
+/*calendar elements*/
+SPAN.calItemEmpty { color: silver; }
+
+SPAN.calItem, SPAN.calItemEmpty { border: 1px solid gray; }
+
+/* nice looking month calendar*/
+TD.calDayCellEmpty, TD.calDayCellFull { border: 1px solid gray;}
+
+TD.calDayCellEmpty { color: silver; }
+
+.calBackDate { color: #000; }
+.calForeDate { color: #fff; }
+
+/* Footer
+-------------------------------------------------------- */
+#copyright {
+	background: /*transparent*/ url(img/footer.jpg) no-repeat center bottom;
+	clear: both;
+	margin: 0 auto;
+	padding: 10px 0;
+	text-align: center;
+	font-weight: bold;
+	height:40px;
+}
+#copyright a:link, #copyright a:visited { text-decoration: underline; color: #000; }
+#copyright a:hover { text-decoration: none; color: #000; border: 0; }
