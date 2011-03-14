@@ -1,7 +1,7 @@
 <?php
 /*
 Theme Name: hr_os
-Version: 1.0.0
+Version: auto
 Description: A theme with an horizontal menu everywhere and a simple modern design
 Theme URI: http://fr.piwigo.org/ext/extension_view.php?eid=503
 Author: flop25
@@ -17,8 +17,11 @@ $themeconf = array(
 	'add_menu_on_public_pages'			=> true,	# activation
 	'Exclude'				=> array('theNBMPage','thePopuphelpPage',),	# Excluded pages
 );
-@include('themeconf_local.inc.php');
-
+@include(PHPWG_ROOT_PATH. 'local/config/hr_os.inc.php');
+if (isset($conf['local_dir_site']))
+{
+  @include(PHPWG_ROOT_PATH.PWG_LOCAL_DIR. 'config/hr_os.inc.php');
+}
 // thx to Vdigital and his plugin spreadmenus
 if ( !function_exists( 'add_menu_on_public_pages' ) ) {
 	if ( defined('IN_ADMIN') and IN_ADMIN ) return false;

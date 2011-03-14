@@ -4,7 +4,7 @@ Thème hr_os de flop25(.free.fr)
 Basé sur le Thème MontBlanc de saimon.org
 ------------------------------------------------------------------------------ */
 
-@import url(menu.css);
+@import menu.css;
 
 * { margin: 0; padding: 0; border: 0; }
 
