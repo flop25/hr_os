@@ -1,10 +1,13 @@
 /* ---------------------------------------------------------------------------
-Thème hr_os de flop25(.free.fr)
+Theme hr_os 
 
-Basé sur le Thème MontBlanc de saimon.org
+child-theme of hr_os
+
+by flop25 http://www.planete-flop.fr/
 ------------------------------------------------------------------------------ */
 
-@import menu.css;
+@import "menu.css";
+@import "iconset.css";
 
 * { margin: 0; padding: 0; border: 0; }
 
@@ -85,8 +88,8 @@ BODY#thePicturePage,BODY#theCategoryPage, BODY#theTagsPage {}
 	#theHeader p {display:none;}
 /*	#theHeader a:link, #theHeader a:visited, #theHeader a:hover { color: #FFF; text-decoration: none; }*/
 
-body#theCommentsPage .content, body#theUploadPage .content, body#theRegisterPage .content, body#theIdentificationPage .content, body#theProfilePage .content, body#theSearchPage .content, body#theAboutPage .content, body#thePopuphelpPage .content, body#thePasswordPage .content, body#theNotificationPage .content, body#theTagsPage .content, body#theNBMPage .content, #content, BODY#theAdminPage #content, BODY#theTagsPage #content {
-	width: 760px;
+body#theCommentsPage .content, body#theUploadPage .content, body#theRegisterPage .content, body#theIdentificationPage .content, body#theProfilePage .content, body#theSearchPage .content, body#theAboutPage .content, body#thePopuphelpPage .content, body#thePasswordPage .content, body#theNotificationPage .content, body#theTagsPage .content, body#theNBMPage .content, #content, BODY#theAdminPage #content, BODY#theTagsPage #content, #theCategoryPage .content {
+	width: 750px;
 	margin: 0 auto;
 }
 
