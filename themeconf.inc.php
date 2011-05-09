@@ -22,6 +22,31 @@ if (isset($conf['local_dir_site']))
 {
   @include(PHPWG_ROOT_PATH.PWG_LOCAL_DIR. 'config/hr_os.inc.php');
 }
+// thx to P@t
+add_event_handler('loc_begin_page_header', 'set_hr_os_header');
+
+function set_hr_os_header()
+{
+  global $page, $conf, $template;
+
+  $config = unserialize($conf['hr_os']);
+
+  if (isset($page['body_id']) and $page['body_id'] == 'theCategoryPage')
+  {
+    $header = isset($page['category']) ? $config['categories'] : $config['home'];
+  }
+  elseif (isset($page['body_id']) and $page['body_id'] == 'thePicturePage')
+  {
+    $header = $config['picture'];
+  }
+  else
+  {
+    $header = $config['other'];
+  }
+
+  $template->assign('display_hr_os_banner', $header);
+}
+
 // thx to Vdigital and his plugin spreadmenus
 if ( !function_exists( 'add_menu_on_public_pages' ) ) {
 	if ( defined('IN_ADMIN') and IN_ADMIN ) return false;
