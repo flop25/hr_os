@@ -223,8 +223,8 @@ position:absolute;
   height: 2.1em;
   padding: 0;
 }
-#menubar DL>DT {
-  padding: 0.2em 0.4em;
+#menubar DL > DT {
+    padding: 0.2em 0.4em 0;
 }
 
 /* general UL formating */
