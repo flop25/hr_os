@@ -15,7 +15,7 @@ function theme_activate($id, $version, &$errors)
       
     $query = '
 INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
-VALUES ("hr_os" , "'.addslashes(serialize($config)).'" , "hr_os parameters");';
+VALUES ("hr_os" , "'.pwg_db_real_escape_string(serialize($config)).'" , "hr_os parameters");';
 
     pwg_query($query);
   }

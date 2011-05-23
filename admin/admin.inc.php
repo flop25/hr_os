@@ -18,7 +18,7 @@ if (isset($_POST['submit']))
 
   $query = '
 UPDATE '.CONFIG_TABLE.'
-SET value = "'.addslashes(serialize($_POST['foo'])).'"
+SET value = "'.pwg_db_real_escape_string(serialize($_POST['foo'])).'"
 WHERE param = "hr_os"
 ;';
   pwg_query($query);
