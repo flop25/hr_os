@@ -147,7 +147,7 @@ body#theCommentsPage .content, body#theUploadPage .content, body#theRegisterPage
 }
 #imageHeaderBar .browsePath a { color:#0066CC; text-decoration: none; }
 #imageHeaderBar .browsePath a:hover { color:#333333; }
-
+#theMainImage {max-width:730px}
 /*#imageToolBar A:hover { background-color: #a0a0a0; }*/
 
 .infoTable{ margin: 20px auto; }
