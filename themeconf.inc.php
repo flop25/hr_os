@@ -56,5 +56,88 @@ function set_hr_os_header()
 
   $template->assign('display_hr_os_banner', $header);
 }
+// function load_pattern
+// include the right ***.pattern.php
+// not compatible 2.2and<2.2
+
+function load_pattern()
+{
+  global $pattern;
+  $pwgversion=str_replace('.','',PHPWG_VERSION);
+  $pwgversion_array=explode('.', PHPWG_VERSION);
+  if (file_exists($pwgversion.'pattern.php'))
+  {
+    include($pwgversion.'.pattern.php');
+    return true;
+  }
+  elseif (file_exists(PHPWG_ROOT_PATH.'themes/hr_os/'.$pwgversion_array[0].$pwgversion_array[1].'x.pattern.php'))
+  {
+    include(PHPWG_ROOT_PATH.'themes/hr_os/'.$pwgversion_array[0].$pwgversion_array[1].'x.pattern.php');
+    return true;
+  }
+  else
+  {
+    $list_pattern_path=array();
+    $dir=PHPWG_ROOT_PATH.'themes/hr_os';
+    $dh = opendir($dir);
+    while (($file = readdir ($dh)) !== false ) {
+      if ($file !== '.' && $file !== '..') {
+        $path =$dir.'/'.$file;
+        if (!is_dir ($path)) { 
+          if(strpos($file,'pattern.php')!==false) { //On ne prend que les .pattern.php
+            $list_pattern_path[]=$file;
+          }
+        }
+      }
+    }
+    closedir($dh);
+    $f=0;
+    for($i = 10; $i >=0; $i--)
+    {
+      if (in_array($pwgversion_array[0].$i.'.pattern.php',$list_pattern_path))
+      {
+        include($pwgversion_array[0].$i.'.pattern.php');
+        return true;
+        $f=1;
+        break;
+      }
+    }
+    if ($f=0)
+    {
+      return false;
+    }
+  }
+  
+}
+if(!load_pattern())
+{
+  global $page;
+  $page['errors'][]='Theme not compatible';
+}
+
+/************************************ picture.tpl ************************************/
+add_event_handler('render_element_content', 'hr_os_picture',  EVENT_HANDLER_PRIORITY_NEUTRAL, 20 );
+function hr_os_picture($content, $element_info)
+{
+  global $template;
+  $template->set_prefilter('default_content', 'hr_os_prefilter_picture');
+  return $content;
+}
+function hr_os_prefilter_picture($content, &$smarty)
+{
+  global $pattern;
+  $r=$pattern['hr_os_prefilter_picture']['R'];
+  $ps=$pattern['hr_os_prefilter_picture']['S'];
+  foreach($r as $i => $pr)
+  {
+    $content = str_replace($ps[$i], $pr, $content);
+  }
+  
+  $content ='{define_derivative name=\'der_hr_os\' width=730 height=9999 crop=false}
+{assign var=der value=$pwg->derivative($der_hr_os, $current.src_image)}
+'.$content;
+  return $content;
+}
+
 
 ?>
