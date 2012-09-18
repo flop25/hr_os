@@ -20,8 +20,8 @@
 // | Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, |
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
-$lang['Display page banner on categories pages'] = 'Vis side banner på kategoriside';
-$lang['Display page banner on home page'] = 'Vis side banner på startside';
-$lang['Display page banner on other pages'] = 'Vis side banner på øvrige sider';
-$lang['Display page banner on picture page'] = 'Vis side banner på foto side';
+$lang['Display page banner on categories pages'] = 'Vis sidebanner på kategoriside';
+$lang['Display page banner on home page'] = 'Vis sidebanner på forside';
+$lang['Display page banner on other pages'] = 'Vis sidebanner på øvrige sider';
+$lang['Display page banner on picture page'] = 'Vis sidebanner på fotoside';
 ?>
