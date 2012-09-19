@@ -23,5 +23,5 @@
 $lang['Display page banner on categories pages'] = 'Vis sidebanner på kategoriside';
 $lang['Display page banner on home page'] = 'Vis sidebanner på forside';
 $lang['Display page banner on other pages'] = 'Vis sidebanner på øvrige sider';
-$lang['Display page banner on picture page'] = 'Vis sidebanner på fotoside';
+$lang['Display page banner on picture page'] = 'Vis sidebanner på billedside';
 ?>
