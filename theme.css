@@ -77,6 +77,29 @@ img{ border: 0; }
 #derivativeSwitchBox A:hover, #sortOrderBox A:hover {
 	text-shadow: 0 0 2px #000;
 }
+#languageSwitchBox{
+	font-size: 11px;
+	color: #000033 !important;
+	text-shadow: 0 0 2px #ccc;
+	padding: 4px 8px;
+	border: 1px solid rgba(255,255,255,0.25);
+	background-color: rgb(255,255,255) !important;
+	background-color: rgba(255,255,255,0.92)!important;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), to(#fff));
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	box-shadow: 0 0 5px #555;
+	-webkit-box-shadow: 0 0 5px #555;
+	-moz-box-shadow: 0 0 5px #555;
+}
+#languageSwitchBox A {
+	color: #000 !important;
+}
+
+#languageSwitchBox A:hover {
+	text-shadow: 0 0 2px #000 !important;
+}
 
 
 /* Page

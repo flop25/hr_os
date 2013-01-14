@@ -15,23 +15,40 @@ $themeconf = array(
   'local_head'    => 'local_head.tpl',
   'activable'     => true,
 );
-// Need upgrade?
-  if (!isset($conf['hr_os']))
-  {
-    $config = array(
-      'home'       => true,
-      'categories' => true,
-      'picture'    => false,
-      'other'      => true,
-      );
-      
-    $query = '
+//// [update check]
+if (!isset($conf['hr_os']))
+{
+  $config = array(
+    'home'       => true,
+    'categories' => true,
+    'picture'    => false,
+    'other'      => true,
+    );
+    
+  $query = '
 INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
 VALUES ("hr_os" , "'.pwg_db_real_escape_string(serialize($config)).'" , "hr_os parameters");';
 
+  pwg_query($query);
+  load_conf_from_db();
+}
+if (isset($conf['derivatives']))  {    
+  $new = @unserialize($conf['derivatives']);
+  if(!isset($new['d']['Optimal']))
+  {
+    $new['d']['Optimal']=ImageStdParams::get_custom(730,9999); 
+    $query = '
+        UPDATE '.CONFIG_TABLE.'
+        SET value="'.addslashes(serialize($new)).'"
+        WHERE param = "derivatives"
+        LIMIT 1';
     pwg_query($query);
     load_conf_from_db();
   }
+}
+//// [/update check]
+
+
 // thx to P@t
 add_event_handler('loc_begin_page_header', 'set_hr_os_header');
 
@@ -116,7 +133,7 @@ if(!load_pattern())
 }
 
 /************************************ picture.tpl ************************************/
-add_event_handler('render_element_content', 'hr_os_picture',  EVENT_HANDLER_PRIORITY_NEUTRAL, 20 );
+//add_event_handler('render_element_content', 'hr_os_picture',  EVENT_HANDLER_PRIORITY_NEUTRAL, 20 );
 function hr_os_picture($content, $element_info)
 {
   global $template;
