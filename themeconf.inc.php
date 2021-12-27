@@ -74,29 +74,29 @@ function set_hr_os_header()
 
   $template->assign('display_hr_os_banner', $header);
 }
-// function load_pattern
+// function load_pattern 3.0
 // include the right ***.pattern.php
-// not compatible 2.2and<2.2
+// not compatible Piwigo < 11.0
 
 function load_pattern()
 {
   global $pattern;
-  $pwgversion=str_replace('.','',PHPWG_VERSION);
+  $pwgversion=str_replace('.','_',PHPWG_VERSION);
   $pwgversion_array=explode('.', PHPWG_VERSION);
   if (file_exists($pwgversion.'pattern.php'))
   {
     include($pwgversion.'.pattern.php');
     return true;
   }
-  elseif (file_exists(PHPWG_ROOT_PATH.'themes/hr_os/'.$pwgversion_array[0].'_'.$pwgversion_array[1].'_x.pattern.php'))
+  elseif (file_exists(PHPWG_ROOT_PATH.'themes/Pure_default/'.$pwgversion_array[0].'.pattern.php'))
   {
-    include(PHPWG_ROOT_PATH.'themes/hr_os/'.$pwgversion_array[0].'_'.$pwgversion_array[1].'_x.pattern.php');
+    include(PHPWG_ROOT_PATH.'themes/Pure_default/'.$pwgversion_array[0].'.pattern.php');
     return true;
   }
   else
   {
     $list_pattern_path=array();
-    $dir=PHPWG_ROOT_PATH.'themes/hr_os';
+    $dir=PHPWG_ROOT_PATH.'themes/Pure_default';
     $dh = opendir($dir);
     while (($file = readdir ($dh)) !== false ) {
       if ($file !== '.' && $file !== '..') {
@@ -109,23 +109,12 @@ function load_pattern()
       }
     }
     closedir($dh);
-    $f=0;
-    for($i = 20; $i >=0; $i--)
-    {
-      if (in_array($pwgversion_array[0].'_'.$i.'_x.pattern.php',$list_pattern_path))
-      {
-        include($pwgversion_array[0].'_'.$i.'_x.pattern.php');
-        return true;
-        $f=1;
-        break;
-      }
-    }
-    if ($f=0)
-    {
-      return false;
-    }
-  }
-  
+    natsort($list_pattern_path);
+    $list_pattern_path=array_reverse($list_pattern_path);
+    echo($list_pattern_path[0]);
+    include($list_pattern_path[0]);
+    return $pattern['return'];
+ }
 }
 if(!load_pattern())
 {
