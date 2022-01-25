@@ -88,15 +88,15 @@ function load_pattern()
     include($pwgversion.'.pattern.php');
     return true;
   }
-  elseif (file_exists(PHPWG_ROOT_PATH.'themes/Pure_default/'.$pwgversion_array[0].'.pattern.php'))
+  elseif (file_exists(PHPWG_ROOT_PATH.'themes/hr_os/'.$pwgversion_array[0].'.pattern.php'))
   {
-    include(PHPWG_ROOT_PATH.'themes/Pure_default/'.$pwgversion_array[0].'.pattern.php');
+    include(PHPWG_ROOT_PATH.'themes/hr_os/'.$pwgversion_array[0].'.pattern.php');
     return true;
   }
   else
   {
     $list_pattern_path=array();
-    $dir=PHPWG_ROOT_PATH.'themes/Pure_default';
+    $dir=PHPWG_ROOT_PATH.'themes/hr_os';
     $dh = opendir($dir);
     while (($file = readdir ($dh)) !== false ) {
       if ($file !== '.' && $file !== '..') {
